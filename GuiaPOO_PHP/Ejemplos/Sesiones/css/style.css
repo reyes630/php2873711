@@ -1,0 +1,94 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fdf6ec; /* Fondo cálido pastel */
+    color: #333; /* Texto oscuro suave */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #fffdf9; /* Fondo blanco cálido */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 320px; /* Ancho fijo para mantener consistencia */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #d98852; /* Tono naranja pastel */
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #555; /* Texto gris suave */
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #000; /* Bordes negros */
+    border-radius: 5px;
+    background-color: #fbf4e6; /* Fondo pastel cálido */
+    font-size: 1rem;
+    color: #333; /* Espaciado lateral para alinear con el contenedor */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: none;
+    border-color: #d98852; /* Naranja pastel */
+    background-color: #fcefe1; /* Más claro al enfocar */
+}
+
+button {
+    width: 100%; /* Igual que los inputs */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d98852; /* Botón naranja pastel */
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #b66a3c; /* Naranja más oscuro */
+    transform: translateY(-2px); /* Sutil efecto de flotación */
+}
+
+button:focus {
+    outline: none;
+}
+
+.form-item {
+    border: 1px solid #d98852;
+    background-color: #b66a3c;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #0009;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
