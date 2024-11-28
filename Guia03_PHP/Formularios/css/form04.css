@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+body {
+    /* Con este bloque de codigo el contenedor queda en el centro de la pantalla */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+
+}
+
+.form-container {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #d4d4d4;
+    box-shadow: 0 0 10px #0009;
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-container label {
+    display: block;
+}
+
+.form-group input{
+    outline: none;
+    background-color: transparent ;
+    border-bottom: 2px solid black;
+    padding: 3px;
+    
+}
+
+.form-group button {
+    background-color: #0009;
+    border-radius: 50px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    &:hover {
+        background-color: #000;
+        transition: all 0.2s ease-in;
+    }
+
+}
+
+.info-container {
+    border: 2px solid rgb(255, 0, 0);
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #ffdbdb;
+    box-shadow: 0 0 10px #0009;
+}
+
+.info-container span {
+    display: block;
+}
+
