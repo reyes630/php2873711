@@ -31,9 +31,9 @@ if (!isset($_SESSION['numeroCuenta'])) {
         
         <div class="form-group">
             <h3>Opciones disponibles</h3>
-            <a href="ingresarDinero.php"><button class="extra-btn">Ingresar Dinero</button></a>
+            <a href="ingresar.php"><button class="extra-btn">Ingresar Dinero</button></a>
             <a href="retirar.php"><button class="extra-btn">Retirar</button></a>
-            <a href="pagarFactura.php"><button class="extra-btn">Pagar Factura</button></a>
+            <a href="factura.php"><button class="extra-btn">Pagar Factura</button></a>
             <a href="transferir.php"><button class="extra-btn">Transferir</button></a>
         </div>
         <div class="form-group">
