@@ -14,6 +14,7 @@
                 <label for="monto">Monto a ingresar:</label>
                 <input type="number" id="monto" name="monto" placeholder="Ingrese el monto" required>
             </div>
+            <input type="hidden" name="accion" value="ingresar">
             <div class="form-group">
                 <button type="submit">Confirmar</button>
             </div>

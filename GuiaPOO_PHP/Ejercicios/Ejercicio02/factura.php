@@ -19,7 +19,10 @@
                 <input type="number" id="monto" name="monto" placeholder="Ingrese el monto" required>
             </div>
             <div class="form-group">
+            <a href="procesarAcciones.ph">
+
                 <button type="submit">Confirmar</button>
+            </a>
             </div>
         </form>
         <div class="form-group">
