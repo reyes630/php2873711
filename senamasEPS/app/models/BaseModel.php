@@ -13,7 +13,7 @@ abstract class BaseModel
 
     public function __construct()
     {
-        $dbConfig = require_once MAIN_APP_ROUTE . "/../config/dataBase.php";
+        $dbConfig = require_once MAIN_APP_ROUTE . "../config/dataBase.php";
         try{// Establecer la conexxión a la base de datos
             $dsn = "{$dbConfig['driver']}:host={$dbConfig['host']};dbname={$dbConfig['database']}";
             $username = $dbConfig["username"];

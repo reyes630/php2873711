@@ -18,4 +18,6 @@ class PacienteController extends BaseController
         //Renderizar la vista directamente desde el controlador
         require_once MAIN_APP_ROUTE. "views/paciente/indexView.php";
     }
+
+    
 }

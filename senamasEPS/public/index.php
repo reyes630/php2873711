@@ -8,24 +8,7 @@ $url = $_SERVER["REQUEST_URI"];
 $url = str_replace("/ADSO2873711/senamasEps/public","",$url);
 
 //Rutas permitidas en nuestra aplicación
-$routes = [
-    "/" => [
-        "controller" => "App\Controllers\HomeController",
-        "action" => "index",
-    ],
-    "/home" => [
-        "controller" => "App\Controllers\HomeController",
-        "action" => "index"
-    ],
-    "/hello" => [
-        "controller" => "App\Controllers\HomeController",
-        "action" => "greetings"
-    ],
-    "/paciente/index" => [
-        "controller" => "App\Controllers\PacienteController",
-        "action" => "index"
-    ],
-];
+$routes = require_once "../config/routes.php";
 
 //Verifica que la ruta sea válida y redireccionar a la acción del controlador respectivo
 if (array_key_exists($url, $routes)) {

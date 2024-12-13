@@ -16,4 +16,8 @@ return [
         "controller" => "App\Controllers\PacienteController",
         "action" => "index"
     ],
+    "/paciente/indexTest" => [
+        "controller" => "App\Controllers\PacienteController",
+        "action" => "indexTest"
+    ],
 ];
