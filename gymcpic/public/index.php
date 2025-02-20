@@ -22,11 +22,11 @@ $routes = [
         'action' => 'saludar'
     ],
     '/rol/index' => [
-        'controller' => 'App\Controllers\RolcOntroller',
+        'controller' => 'App\Controllers\RolController',
         'action' => 'index'
     ],
     '/rol/view' => [
-        'controller' => 'App\Controllers\RolcOntroller',
+        'controller' => 'App\Controllers\RolController',
         'action' => 'view'
     ],
 ];
@@ -42,4 +42,5 @@ if (array_key_exists($url, $routes)) {
 }else {
     http_response_code(404);
     echo "Pagina no encontrada";
+    exit();
 }
