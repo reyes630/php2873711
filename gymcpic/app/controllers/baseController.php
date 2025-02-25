@@ -1,22 +1,21 @@
-<?php 
+<?php
 namespace App\Controllers;
 
-class BaseController {
-    public function render(string $view, array $arrayData=null) {
-        foreach ($arrayData as $key => $value) {
-            //Se crean variables de acuerdo a las keys 
-            //Se extraen todos los datos que llegan en arrayData
-            
-            $$key = $value;
+use ValueError;
 
-            
+class BaseController{
+    public function render(string $view, array $arrayData=null){
+        if (isset($arrayData) && is_array($arrayData)) {
+            foreach ($arrayData as $key => $value) {
+                $$key = $value;
+            }
         }
-        include_once MAIN_APP_ROUTE.'../views/'.$view;
+        include_once MAIN_APP_ROUTE.'../views/'.$view;  //rols/viewRol.php
     }
-    public function formatNumber() {
-        echo "<br>Formatea un numero";
+    public function formatNumber(){
+        echo "<br>Formatea el numero";
     }
-    public function redirectTo() {
-        echo "<br>Reenvía la página";
+    public function redirectTo($view){
+        header("Location: /$view");
     }
 }

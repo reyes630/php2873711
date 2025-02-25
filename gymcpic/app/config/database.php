@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 return [
     "driver" => "mysql",
     "host" => "localhost",

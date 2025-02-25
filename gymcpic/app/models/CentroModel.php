@@ -1,22 +1,23 @@
 <?php
 namespace App\Models;
+
 use PDO;
 use PDOException;
 
 require_once MAIN_APP_ROUTE."../models/BaseModel.php";
 
-class RolModel extends BaseModel{
+class CentroModel extends BaseModel{
     public function __construct(
         ?int $id = null,
         ?string $nombre = null,
     )
     {
-        $this->table = "rol";
+        $this->table = "centroformacion";
         //Se llama a el contructor de el padre
         parent::__construct();
     }
 
-    public function saveRol($nombre){
+    public function saveCentro($nombre){
         try {
             $sql = "INSERT INTO $this->table (nombre) VALUES (:nombre)";
             $statement = $this->dbConnection->prepare($sql);
@@ -24,7 +25,7 @@ class RolModel extends BaseModel{
             $result = $statement->execute();
             print_r($result);
         } catch (PDOException $ex) {
-            echo "Error al guardar el rol: ".$ex->getMessage();
+            echo "Error al guardar el Centro de formación: ".$ex->getMessage();
         }
     }
 }
