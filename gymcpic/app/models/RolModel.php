@@ -27,4 +27,30 @@ class RolModel extends BaseModel{
             echo "Error al guardar el rol: ".$ex->getMessage();
         }
     }
+
+    public function getRol($id) {
+        try {
+            $sql = "SELECT * FROM {$this->table} WHERE id=:id";
+            $statement = $this ->dbConnection->prepare($sql);
+            $statement ->bindParam(":id", $id, PDO::PARAM_INT);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_OBJ);
+            return $result[0];
+        } catch (PDOException $ex) {
+            echo "Error al obtener el rol ".$ex->getMessage();
+        }
+    }
+
+    public function editrOL($id){
+        try {
+            $sql = "UPDATE $this->table SET nombre =:nombre WHERE id=:id";
+            $statement = $this->dbConnection->prepare($sql);
+            $statement->bindParam(":nombre", $nombre, PDO::PARAM_INT);
+            $statement->bindParam(":id", $id, PDO::PARAM_INT);
+            $result = $statement->execute();
+            return $result; 
+        } catch (PDOException $ex) {
+            echo "No se pudo editar el rol";
+        }
+    }
 }

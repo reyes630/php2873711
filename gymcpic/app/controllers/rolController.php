@@ -37,4 +37,34 @@ class RolController extends BaseController{
             $this->redirectTo("rol/view");
         }
     }
+
+    public function viewRol($id) {
+        $rolObj = new RolModel();
+        $rolInfo = $rolObj->getRol($id);
+        $data = [
+            "rol" => $rolInfo,
+        ];
+        $this->render('rol/viewOneRol.php', $data);
+    }
+
+    public function  editRol($id) {
+        $rolObj = new RolModel;
+        $rolInfo = $rolObj->getRol($id);
+        $data = [
+            "rol" => $rolInfo
+        ];
+        $this->render('rol/editRol.php', $data);
+    }
+
+    public function updateRol() {
+        if (isset($_POST['txtNombre'])) {
+            $id = $_POST['txtId'] ?? null;
+            $nombre = $_POST['txtNombre'] ?? null;
+            $rolObj = new RolModel();
+            $resp = $rolObj->editRol($id, $nombre);
+        }
+        header('location:/rol/view');
+    }
 }
+
+

@@ -14,13 +14,17 @@
     </header>
     <div class="container">
         <div class="data-container">
-           <form action="/rol/create" method="post">
+           <form action="/rol/update" method="post">
                 <div class="form-group">
-                    <label for="">Nombre del rol</label>
-                    <input type="text" name="txtNombre" id="txtNombre" class="form-control">
+                    <label for="">ID rol</label>
+                    <input type="text" readonly value="<?php echo $rol->id ?>" name="txtId" id="txtId" class="form-control">
                 </div>
                 <div class="form-group">
-                    <button type="submit">Guardar</button>
+                    <label for="">Nombre del rol</label>
+                    <input type="text" value="<?php echo $rol->nombre ?>" name="txtNombre" id="txtNombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Editar</button>
                 </div>
            </form>
         </div>

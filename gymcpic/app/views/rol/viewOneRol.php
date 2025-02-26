@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> New Roles</title>
+    <title>Roles</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -14,15 +14,16 @@
     </header>
     <div class="container">
         <div class="data-container">
-           <form action="/rol/create" method="post">
-                <div class="form-group">
-                    <label for="">Nombre del rol</label>
-                    <input type="text" name="txtNombre" id="txtNombre" class="form-control">
-                </div>
-                <div class="form-group">
-                    <button type="submit">Guardar</button>
-                </div>
-           </form>
+            <?php
+            if ($rol && is_object($rol)) {
+               
+                echo "<div class='record'>
+                <span>ID: $rol->id - </span>
+                <span>Nombre: $rol->nombre - </span>
+                </div>";
+               
+            }
+            ?>
         </div>
     </div>
     <footer>

@@ -19,18 +19,28 @@ class ProgramaModel extends BaseModel{
         parent::__construct();
     }
 
-    public function savePrograma($codigo, $nombre, $FKcentroFormacion){
+    public function savePrograma($codigo, $nombre, $FkIdCentroFormacion){
         try {
-            $sql = "INSERT INTO $this->table (codigo, nombre, fkCentroFormacion) VALUES (:codigo, :nombre, :fkCentroFormacion)";
+            // Preparar la sentencia SQL para insertar un nuevo programa
+            $sql = "INSERT INTO $this->table (codigo, nombre, FkIdCentroFormacion) VALUES (:codigo, :nombre, :FkIdCentroFormacion)";
+            
+            // Preparar la declaración SQL
             $statement = $this->dbConnection->prepare($sql);
+            
+            // Vincular los parámetros con sus valores
             $statement->bindParam(":codigo", $codigo, PDO::PARAM_STR);
             $statement->bindParam(":nombre", $nombre, PDO::PARAM_STR);
-            $statement->bindParam(":fkCentroFormacion", $FKcentroFormacion, PDO::PARAM_STR);
+            $statement->bindParam(":FkIdCentroFormacion", $FkIdCentroFormacion, PDO::PARAM_INT);
             
+            // Ejecutar la sentencia SQL
             $result = $statement->execute();
             print_r($result);
+            
+            return $result;
         } catch (PDOException $ex) {
-            echo "Error al guardar el Programa de formación: ".$ex->getMessage();
+           
+            echo "Error al guardar el programa de formación: ".$ex->getMessage();
         }
     }
+    
 }

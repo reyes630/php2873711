@@ -20,7 +20,7 @@
             } else {
                 foreach ($programas as $key => $value) {
                     echo "<div class='record'>
-                        <span>ID: $value->id - Código: $value->codigo - nombre: $value->nombre - FKcentroFormacion: $value->FkIdCentroformacion </span>
+                        <span>ID: $value->id - Código: $value->codigo - Nombre: $value->nombre - Centro Formacion: $value->FkIdCentroFormacion </span>
                         <div class='buttons'>
                             <button>Consultar</button>
                             <button>Editar</button>
