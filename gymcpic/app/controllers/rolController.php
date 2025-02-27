@@ -1,39 +1,42 @@
 <?php
+
 namespace App\Controllers;
+
 use App\Models\RolModel;
 
-require_once "baseController.php";
-require_once MAIN_APP_ROUTE."../models/RolModel.php";
+require_once 'baseController.php';
+require_once MAIN_APP_ROUTE . '../models/RolModel.php';
 
-class RolController extends BaseController{
-    public function index(){
-        echo "<br>CONTROLLER> RolController";
-        echo "<br>ACTION> index";
-        
-        // $this->render();
-    }     
-    
-    public function view(){
-        // echo "<br>CONTROLLER> RolController";
-        // echo "<br>ACTION> view";
-        //LLamamos al modelo de Rol
+class RolController extends BaseController
+{
+    public function index()
+    {
+        echo '<br>CONTROLLER> RolController';
+        echo '<br>ACTION> index';
+        $this->redirectTo("rol/view");
+    }
+    public function view()
+    {
+        // echo '<br>CONTROLLER> RolController';
+        // echo '<br>ACTION> view';
+        //Llamamos al modelo de Rol
         $rolObj = new RolModel();
         $roles = $rolObj->getAll();
-        //LLamamos a la vista
-        $data = ["roles"=>$roles];
+        //Llamamos a la vista
+        $data = ["roles" => $roles];
         $this->render('rol/viewRol.php', $data);
     }
-
     public function newRol(){
         $this->render('rol/newRol.php');
     }
 
     public function createRol(){
-        if (isset($_POST["txtNombre"])) {
-            $nombre = $_POST["txtNombre"] ?? null;
+        if (isset($_POST['txtNombre'])) {
+            $nombre = $_POST['txtNombre'] ?? null;
             //Creamos instancia del modelo rol
             $rolObj = new RolModel();
-            $rolObj->saveRol("$nombre");
+            //Se llama al metodo que guarda en la base de datos
+            $res = $rolObj->saveRol($nombre);
             $this->redirectTo("rol/view");
         }
     }
@@ -47,8 +50,8 @@ class RolController extends BaseController{
         $this->render('rol/viewOneRol.php', $data);
     }
 
-    public function  editRol($id) {
-        $rolObj = new RolModel;
+    public function editRol($id){
+        $rolObj = new RolModel();
         $rolInfo = $rolObj->getRol($id);
         $data = [
             "rol" => $rolInfo
@@ -56,15 +59,21 @@ class RolController extends BaseController{
         $this->render('rol/editRol.php', $data);
     }
 
-    public function updateRol() {
-        if (isset($_POST['txtNombre'])) {
+    public function updateRol(){
+        if(isset($_POST['txtNombre'])){
             $id = $_POST['txtId'] ?? null;
             $nombre = $_POST['txtNombre'] ?? null;
             $rolObj = new RolModel();
             $resp = $rolObj->editRol($id, $nombre);
         }
-        header('location:/rol/view');
+        header('Location: /rol/view');
+    }
+
+    public function deleteRol($id)
+    {
+        $rolObj = new RolModel();
+        $rolObj->deleteRol($id);
+        $this->redirectTo("rol/view");
+
     }
 }
-
-

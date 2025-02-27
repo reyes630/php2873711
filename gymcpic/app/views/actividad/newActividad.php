@@ -4,32 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Actividades</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Agrega una nueva Actividad</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <header>
-        <h1>CPICGym - software gestion gimnasio CPIC</h1>
+        <h1>GymCPIC - Software Gestión Gimnasio CPIC</h1>
     </header>
     <div class="container">
         <div class="data-container">
-           <form action="/actividad/create" method="post">
+            <form action="/actividad/create" method="post">
                 <div class="form-group">
-                    <label for="">Nombre de la actividad</label>
+                    <label for="">Nombre de la actividad:</label>
                     <input type="text" name="txtNombre" id="txtNombre" class="form-control">
-                    <label for="">Descripcion</label>
-                    <input type="text" name="txtDescricpcion" id="txtDescricpcion" class="form-control">
+                    <label for="">Descripción de la actividad:</label>
+                    <input type="text" name="txtDescripcion" id="txtDescripcion" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit">Guardar</button>
                 </div>
-           </form>
+            </form>
         </div>
+
     </div>
     <footer>
-        <p>Desarrollado por ADSO 2873711</p>
+        <p>&copy Desarrollado por ADSO 2873711</p>
     </footer>
 </body>
-
 </html>

@@ -4,30 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> New Roles</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title> nuevo Rol</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
     <header>
-        <h1>CPICGym - software gestion gimnasio CPIC</h1>
+    <h1>GymCPIC - Software Gestión Gimnasio CPIC</h1>
+
     </header>
     <div class="container">
         <div class="data-container">
-           <form action="/rol/create" method="post">
+            <form action="/rol/create" method="post">
                 <div class="form-group">
-                    <label for="">Nombre del rol</label>
+                    <label for="">Nombre del Rol:</label>
                     <input type="text" name="txtNombre" id="txtNombre" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit">Guardar</button>
                 </div>
-           </form>
+            </form>
         </div>
+
     </div>
     <footer>
-        <p>Desarrollado por ADSO 2873711</p>
+        <p>&copy Desarrollado por ADSO 2873711</p>
     </footer>
 </body>
-
 </html>
